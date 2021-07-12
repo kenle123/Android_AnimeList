@@ -9,6 +9,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     
     public void clickFunction(View view) {
+
         Log.i("Value", "ur mum");
     }
 
