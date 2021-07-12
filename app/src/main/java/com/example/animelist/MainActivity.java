@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     
     public void clickFunction(View view) {
 
-        Log.i("Value", "ur mum");
+        Log.i("Value", "chris broad in'nt");
     }
 
     @Override
