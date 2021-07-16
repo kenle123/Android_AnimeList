@@ -21,12 +21,22 @@ public class MainActivity extends AppCompatActivity {
 
         // Login button, for now only goes to sign up activity
         Button loginBtn = (Button) findViewById(R.id.button);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+
+        Button goToLoginPage = (Button) findViewById(R.id.goToSignUp);
+        goToLoginPage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), SignUpScreen.class);
                     v.getContext().startActivity(intent);
                 }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Main_Page.class);
+                v.getContext().startActivity(intent);
+            }
         });
     }
 }
