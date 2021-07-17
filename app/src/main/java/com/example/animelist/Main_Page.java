@@ -10,7 +10,6 @@ import com.example.animelist.pojos.Anime;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Main_Page extends AppCompatActivity {
 
@@ -19,20 +18,20 @@ public class Main_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        SimpleAdapter adapter = new SimpleAdapter(generateSimpleList());
+        AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.anime_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
 
-    private List<Anime> generateSimpleList() {
-        List<Anime> simpleViewModelList = new ArrayList<>();
+    private List<Anime> generateAnimeList() {
+        List<Anime> animeList = new ArrayList<>();
 
-        simpleViewModelList.add(new Anime("Death Note"));
-        simpleViewModelList.add(new Anime("asDFSFAFAFASFASFASF"));
-        simpleViewModelList.add(new Anime("ioasjflkasmflksiocj lkmslkfasj"));
+        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", 9.17));
+        animeList.add(new Anime("Jujutsu Kaisen", 8.77));
+        animeList.add(new Anime("Your Lie in April", 8.70));
 
-        return simpleViewModelList;
+        return animeList;
     }
 }

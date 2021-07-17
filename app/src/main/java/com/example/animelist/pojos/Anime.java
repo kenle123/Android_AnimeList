@@ -2,9 +2,11 @@ package com.example.animelist.pojos;
 
 public class Anime {
     private String name;
+    private double rating;
 
-    public Anime(String name) {
+    public Anime(String name, double rating) {
         this.name = name;
+        this.rating = rating;
     }
 
     public String getAnimeName() {
@@ -13,5 +15,13 @@ public class Anime {
 
     public void setAnimeName(String name) {
         this.name = name;
+    }
+
+    public double getAnimeRating() {
+        return rating;
+    }
+
+    public void setAnimeRating(double rating) {
+        this.rating = rating;
     }
 }

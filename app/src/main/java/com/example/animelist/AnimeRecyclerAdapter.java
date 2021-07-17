@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.animelist.pojos.Anime;
@@ -13,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SimpleAdapter extends RecyclerView.Adapter {
+public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     List<Anime> models = new ArrayList<>();
 
-    public SimpleAdapter(List<Anime> viewModels) {
+    public AnimeRecyclerAdapter(List<Anime> viewModels) {
         if(viewModels != null) {
             this.models.addAll(viewModels);
         }
@@ -25,12 +24,12 @@ public class SimpleAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        return new SimpleViewHolder(view);
+        return new AnimeRecyclerViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-        ((SimpleViewHolder) holder).bindData(models.get(position));
+        ((AnimeRecyclerViewHolder) holder).bindData(models.get(position));
     }
 
     @Override
