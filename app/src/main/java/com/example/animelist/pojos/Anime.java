@@ -7,11 +7,11 @@ public class Anime {
         this.name = name;
     }
 
-    public String getName() {
+    public String getAnimeName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setAnimeName(String name) {
         this.name = name;
     }
 }
