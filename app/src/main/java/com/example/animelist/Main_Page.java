@@ -19,7 +19,7 @@ public class Main_Page extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
 
         AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.anime_list);
+        RecyclerView recyclerView = findViewById(R.id.anime_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -28,9 +28,9 @@ public class Main_Page extends AppCompatActivity {
     private List<Anime> generateAnimeList() {
         List<Anime> animeList = new ArrayList<>();
 
-        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", 9.17));
-        animeList.add(new Anime("Jujutsu Kaisen", 8.77));
-        animeList.add(new Anime("Your Lie in April", 8.70));
+        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", "9.17"));
+        animeList.add(new Anime("Jujutsu Kaisen", "8.77"));
+        animeList.add(new Anime("Your Lie in April", "8.70"));
 
         return animeList;
     }

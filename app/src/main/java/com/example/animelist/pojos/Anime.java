@@ -2,9 +2,9 @@ package com.example.animelist.pojos;
 
 public class Anime {
     private String name;
-    private double rating;
+    private String rating;
 
-    public Anime(String name, double rating) {
+    public Anime(String name, String rating) {
         this.name = name;
         this.rating = rating;
     }
@@ -17,11 +17,11 @@ public class Anime {
         this.name = name;
     }
 
-    public double getAnimeRating() {
+    public String getAnimeRating() {
         return rating;
     }
 
-    public void setAnimeRating(double rating) {
+    public void setAnimeRating(String rating) {
         this.rating = rating;
     }
 }
