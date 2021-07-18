@@ -18,5 +18,5 @@
             tools:text="Sample Anime Rating"
             android:id="@+id/anime_list_rating"
             android:gravity="end" />
-    
+
 </FrameLayout>

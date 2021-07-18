@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AnimeList</string>
+
+    <!-- For bottom navigation bar -->
+    <string name="main_anime_list">Animes</string>
+    <string name="user_anime_list">MyAnimeList</string>
+    <string name="user_profile">Profile</string>
+
 </resources>
