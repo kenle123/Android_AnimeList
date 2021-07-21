@@ -28,9 +28,9 @@ public class Main_Page extends AppCompatActivity {
     private List<Anime> generateAnimeList() {
         List<Anime> animeList = new ArrayList<>();
 
-        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", "9.17"));
-        animeList.add(new Anime("Jujutsu Kaisen", "8.77"));
-        animeList.add(new Anime("Your Lie in April", "8.70"));
+        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", "| Rating: 9.17"));
+        animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.77"));
+        animeList.add(new Anime("Your Lie in April", "| Rating: 8.70"));
 
         return animeList;
     }
