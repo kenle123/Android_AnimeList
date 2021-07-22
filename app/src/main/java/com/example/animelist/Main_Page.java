@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.animelist.pojos.Anime;
 
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main_Page extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,11 @@ public class Main_Page extends AppCompatActivity {
     private List<Anime> generateAnimeList() {
         List<Anime> animeList = new ArrayList<>();
 
-        animeList.add(new Anime("Fullmetal Alchemist: Brotherhood", "| Rating: 9.17"));
-        animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.77"));
-        animeList.add(new Anime("Your Lie in April", "| Rating: 8.70"));
+            animeList.add(new Anime("Fullmetal Alchemist", "| Rating: 9.17"));
+            animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.77"));
+            animeList.add(new Anime("Your Lie in April", "| Rating: 8.70"));
 
-        return animeList;
-    }
+            return animeList;
+        }
+
 }
