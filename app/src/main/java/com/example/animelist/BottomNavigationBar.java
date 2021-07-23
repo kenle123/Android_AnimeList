@@ -18,6 +18,7 @@ public class BottomNavigationBar extends AppCompatActivity implements Navigation
     private AnimeListFragment animeListFragment;
     private UserAnimeListFragment userAnimeListFragment;
 
+    // Creates and displays Nav bar once app runs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

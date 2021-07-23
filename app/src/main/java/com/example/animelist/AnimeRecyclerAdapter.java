@@ -11,7 +11,7 @@ import com.example.animelist.pojos.Anime;
 import java.util.ArrayList;
 import java.util.List;
 
-
+// connects RecylerView to ArrayList of anime objects
 public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     List<Anime> models = new ArrayList<>();
 
@@ -31,12 +31,12 @@ public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         ((AnimeRecyclerViewHolder) holder).bindData(models.get(position));
     }
-
+    // gets size of anime list
     @Override
     public int getItemCount() {
         return models.size();
     }
-
+    // gets type of item in anime list
     @Override
     public int getItemViewType(final int position) {
         return R.layout.anime_list_item;

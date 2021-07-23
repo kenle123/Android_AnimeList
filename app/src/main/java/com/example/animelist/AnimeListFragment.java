@@ -36,7 +36,7 @@ public class AnimeListFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
-
+// Create ArrayList of anime objects
     private List<Anime> generateAnimeList() {
         List<Anime> animeList = new ArrayList<>();
 
