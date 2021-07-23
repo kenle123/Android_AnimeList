@@ -24,4 +24,6 @@ public class Anime {
     public void setAnimeRating(String rating) {
         this.rating = rating;
     }
+
+    //hello
 }
