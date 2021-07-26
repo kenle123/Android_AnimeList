@@ -10,5 +10,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/anime_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#F4F4EF">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>
