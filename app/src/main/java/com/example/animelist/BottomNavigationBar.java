@@ -5,18 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
-public class BottomNavigationBar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BottomNavigationBar extends AppCompatActivity {
     private BottomNavigationView mainNav;
-    private FrameLayout mainFrame;
     private AnimeListFragment animeListFragment;
     private UserAnimeListFragment userAnimeListFragment;
+    private UserProfileFragment userProfileFragment;
 
     // Creates and displays Nav bar once app runs
     @Override
@@ -26,13 +28,33 @@ public class BottomNavigationBar extends AppCompatActivity implements Navigation
 
         // Bind variables
         mainNav = findViewById(R.id.main_nav);
-        mainFrame = findViewById(R.id.main_frame);
 
+        // Initialize fragments
         animeListFragment = new AnimeListFragment();
         userAnimeListFragment = new UserAnimeListFragment();
+        userProfileFragment = new UserProfileFragment();
 
+        // Sets first fragment as anime list fragment
         setFragment(animeListFragment);
 
+        // Click listener for bottom navigation bar menu items
+        mainNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.main_anime_list:
+                        setFragment(animeListFragment);
+                        return true;
+                    case R.id.user_anime_list:
+                        setFragment(userAnimeListFragment);
+                        return true;
+                    case R.id.user_profile:
+                        setFragment(userProfileFragment);
+                }
+                return true;
+            }
+        });
     }
 
     /**
@@ -43,13 +65,5 @@ public class BottomNavigationBar extends AppCompatActivity implements Navigation
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commit();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        switch(item.getItemId()) {
-//            case
-//        }
-        return false;
     }
 }
