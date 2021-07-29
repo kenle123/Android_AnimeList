@@ -6,8 +6,17 @@
     tools:context=".UserProfileFragment">
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="User Profile" />
+        android:text="Profile page" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
 
 </FrameLayout>
