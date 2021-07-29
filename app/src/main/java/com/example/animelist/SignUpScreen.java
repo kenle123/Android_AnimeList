@@ -54,8 +54,12 @@ public class SignUpScreen extends AppCompatActivity {
                 else if (phone_number.getText().toString().isEmpty()) {
                     Toast.makeText(SignUpScreen.this, "Missing field(s)", Toast.LENGTH_SHORT).show();
                 }
+                // Checks if password and confirm password is the same
+                else if(password != passwordConfirm) {
+                    Toast.makeText(SignUpScreen.this, "Confirm password not identical", Toast.LENGTH_SHORT).show();
+                }
                 else {
-                    Intent intent = new Intent(v.getContext(), BottomNavigationBar.class);
+                    Intent intent = new Intent(v.getContext(), MainActivity.class);
                     v.getContext().startActivity(intent);
                 }
             }
