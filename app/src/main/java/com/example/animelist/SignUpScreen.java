@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 
 public class SignUpScreen extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,9 +56,9 @@ public class SignUpScreen extends AppCompatActivity {
                     Toast.makeText(SignUpScreen.this, "Missing field(s)", Toast.LENGTH_SHORT).show();
                 }
                 // Checks if password and confirm password is the same
-                else if(password != passwordConfirm) {
-                    Toast.makeText(SignUpScreen.this, "Confirm password not identical", Toast.LENGTH_SHORT).show();
-                }
+//                else if(password != passwordConfirm) {
+//                    Toast.makeText(SignUpScreen.this, "Confirm password not identical", Toast.LENGTH_SHORT).show();
+//                }
                 else {
                     Intent intent = new Intent(v.getContext(), MainActivity.class);
                     v.getContext().startActivity(intent);
