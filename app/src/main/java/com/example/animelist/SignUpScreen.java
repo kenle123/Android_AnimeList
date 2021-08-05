@@ -14,6 +14,8 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpScreen extends AppCompatActivity {
     EditText email;
@@ -51,6 +53,9 @@ public class SignUpScreen extends AppCompatActivity {
                 else if(!(password.getText().toString().equals(passwordConfirm.getText().toString()))) {
                     Toast.makeText(SignUpScreen.this, "Confirm password not identical", Toast.LENGTH_SHORT).show();
                 }
+                else if(!isValidPhone(phoneNumber.getText().toString())) {
+                    Toast.makeText(SignUpScreen.this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     Intent intent = new Intent(v.getContext(), MainActivity.class);
                     v.getContext().startActivity(intent);
@@ -77,5 +82,20 @@ public class SignUpScreen extends AppCompatActivity {
                 password.getText().length() == 0 || passwordConfirm.getText().length() == 0 ||
                 birthday.getText().length() == 0 || gender.getText().length() == 0 ||
                 phoneNumber.getText().length() == 0;
+    }
+
+    public static boolean isValidPhone(String phone)
+    {
+        String expression = "^([0-9\\+]|\\(\\d{1,3}\\))[0-9\\-\\. ]{3,15}$";
+        CharSequence inputString = phone;
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(inputString);
+        if (matcher.matches())
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
