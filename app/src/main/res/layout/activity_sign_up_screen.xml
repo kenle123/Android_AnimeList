@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
                 android:ems="10"
-                android:hint="Birthday XX/XX/XXXX"
+                android:hint="Birthday MM/DD/YYYY"
                 android:inputType="textPersonName" />
 
             <EditText
