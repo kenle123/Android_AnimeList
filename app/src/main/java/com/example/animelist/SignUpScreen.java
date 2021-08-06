@@ -6,10 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+import com.google.android.material.navigation.NavigationBarView;
 
 import org.w3c.dom.Text;
 
@@ -17,7 +23,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignUpScreen extends AppCompatActivity {
+public class SignUpScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText email;
     EditText username;
     EditText password;
@@ -25,6 +31,8 @@ public class SignUpScreen extends AppCompatActivity {
     EditText birthday;
     EditText gender;
     EditText phoneNumber;
+
+    String[] genders = { "Select Gender", "Male", "Female", "Prefer not to say"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +82,13 @@ public class SignUpScreen extends AppCompatActivity {
                 v.getContext().startActivity(intent);
             }
         });
+        // Adapter for gender drop down
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genders);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
+        spin.setOnItemSelectedListener(this);
+
     }
 
     /**
@@ -86,7 +101,7 @@ public class SignUpScreen extends AppCompatActivity {
                 birthday.getText().length() == 0 || gender.getText().length() == 0 ||
                 phoneNumber.getText().length() == 0;
     }
-
+    // Checks if phone number that user entered is correct format
     public static boolean isValidPhone(String phone) {
 
         String expression = "^([0-9\\+]|\\(\\d{1,3}\\))[0-9\\-\\. ]{3,15}$";
@@ -101,6 +116,7 @@ public class SignUpScreen extends AppCompatActivity {
             return false;
         }
     }
+    // Checks if email is in the correct format
     private boolean isValidMail(String email) {
 
         String EMAIL_STRING = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -108,4 +124,20 @@ public class SignUpScreen extends AppCompatActivity {
 
         return Pattern.compile(EMAIL_STRING).matcher(email).matches();
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
+        // To get the selected value from spinner
+            //  Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
+            //  String text = mySpinner.getSelectedItem().toString();
+        Toast.makeText(SignUpScreen.this, "Selected User: "+genders[position] ,Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // something
+    }
+
+//    @Override
+//    public void onClick(View v) {
+//    }
 }

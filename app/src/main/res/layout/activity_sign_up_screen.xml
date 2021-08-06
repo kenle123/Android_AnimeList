@@ -83,6 +83,12 @@
                 android:hint="Phone Number"
                 android:inputType="textPersonName" />
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
     </ScrollView>
 
