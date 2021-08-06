@@ -56,6 +56,9 @@ public class SignUpScreen extends AppCompatActivity {
                 else if(!isValidPhone(phoneNumber.getText().toString())) {
                     Toast.makeText(SignUpScreen.this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                 }
+                else if(!isValidMail(email.getText().toString())) {
+                    Toast.makeText(SignUpScreen.this, "Invalid Email", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     Intent intent = new Intent(v.getContext(), MainActivity.class);
                     v.getContext().startActivity(intent);
@@ -84,8 +87,8 @@ public class SignUpScreen extends AppCompatActivity {
                 phoneNumber.getText().length() == 0;
     }
 
-    public static boolean isValidPhone(String phone)
-    {
+    public static boolean isValidPhone(String phone) {
+
         String expression = "^([0-9\\+]|\\(\\d{1,3}\\))[0-9\\-\\. ]{3,15}$";
         CharSequence inputString = phone;
         Pattern pattern = Pattern.compile(expression);
@@ -97,5 +100,12 @@ public class SignUpScreen extends AppCompatActivity {
         else{
             return false;
         }
+    }
+    private boolean isValidMail(String email) {
+
+        String EMAIL_STRING = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        return Pattern.compile(EMAIL_STRING).matcher(email).matches();
     }
 }
