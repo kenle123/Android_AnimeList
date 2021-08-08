@@ -2,9 +2,9 @@ package com.example.animelist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,11 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.android.material.navigation.NavigationBarView;
+import com.example.animelist.pojos.UserInformation;
 
-import org.w3c.dom.Text;
-
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,8 +26,9 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
     EditText password;
     EditText passwordConfirm;
     EditText birthday;
-    EditText gender;
     EditText phoneNumber;
+    Spinner mySpinner;
+    public static UserInformation userInformation;
 
     String[] genders = { "Select Gender", "Male", "Female", "Prefer not to say"};
 
@@ -39,14 +37,14 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
-        // bind variables
+        // Bind variables
         email = (EditText) findViewById(R.id.id_email);
         username = (EditText) findViewById(R.id.id_username);
         password = (EditText) findViewById(R.id.id_password);
         passwordConfirm = (EditText) findViewById(R.id.id_password_comfirm);
         birthday = (EditText) findViewById(R.id.id_birthday);
-        gender = (EditText) findViewById(R.id.id_gender);
         phoneNumber = (EditText) findViewById(R.id.id_phone_number);
+        mySpinner = (Spinner) findViewById(R.id.spinner);
 
         // Checks if there are any missing fields when user creates account
         Button createAccountBtn = (Button) findViewById(R.id.create_account_btn);
@@ -68,8 +66,15 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
                     Toast.makeText(SignUpScreen.this, "Invalid Email", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Intent intent = new Intent(v.getContext(), MainActivity.class);
-                    v.getContext().startActivity(intent);
+                    UserInformation.getInstance().setEmail(email.getText().toString());
+                    UserInformation.getInstance().setUsername(username.getText().toString());
+                    UserInformation.getInstance().setPassword(password.getText().toString());
+                    UserInformation.getInstance().setBirthday(birthday.getText().toString());
+                    UserInformation.getInstance().setPhoneNumber(phoneNumber.getText().toString());
+                    UserInformation.getInstance().setGender(mySpinner.getSelectedItem().toString());
+
+                    // Intent to go to Main screen which is just our sign in screen
+                    goToSignInPage(v);
                 }
             }
         });
@@ -78,17 +83,17 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                Intent intent = new Intent(v.getContext(), SignInActivity.class);
                 v.getContext().startActivity(intent);
             }
         });
+
         // Adapter for gender drop down
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        @SuppressLint("CutPasteId") Spinner spin = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genders);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
-
     }
 
     /**
@@ -98,8 +103,7 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
     public boolean checkIfFieldEmpty() {
         return email.getText().length() == 0 || username.getText().length() == 0 ||
                 password.getText().length() == 0 || passwordConfirm.getText().length() == 0 ||
-                birthday.getText().length() == 0 || gender.getText().length() == 0 ||
-                phoneNumber.getText().length() == 0;
+                birthday.getText().length() == 0 || phoneNumber.getText().length() == 0;
     }
     // Checks if phone number that user entered is correct format
     public static boolean isValidPhone(String phone) {
@@ -128,8 +132,6 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
         // To get the selected value from spinner
-            //  Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
-            //  String text = mySpinner.getSelectedItem().toString();
         Toast.makeText(SignUpScreen.this, "Selected User: "+genders[position] ,Toast.LENGTH_SHORT).show();
     }
     @Override
@@ -137,7 +139,14 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         // something
     }
 
-//    @Override
-//    public void onClick(View v) {
-//    }
+    /**
+     * Go to Sign In Page after account successfully created
+     * @param v The view of the fragment
+     */
+    public void goToSignInPage(View v) {
+        Intent intent = new Intent(v.getContext(), SignInActivity.class);
+        v.getContext().startActivity(intent);
+    }
+
+
 }

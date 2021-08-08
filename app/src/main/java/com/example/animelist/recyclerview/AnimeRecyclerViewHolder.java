@@ -1,10 +1,11 @@
-package com.example.animelist;
+package com.example.animelist.recyclerview;
 
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.animelist.R;
 import com.example.animelist.pojos.Anime;
 
 public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {

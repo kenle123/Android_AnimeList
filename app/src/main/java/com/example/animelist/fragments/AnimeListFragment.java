@@ -1,4 +1,4 @@
-package com.example.animelist;
+package com.example.animelist.fragments;
 
 import android.os.Bundle;
 
@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.animelist.R;
 import com.example.animelist.pojos.Anime;
+import com.example.animelist.recyclerview.AnimeRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,11 +8,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
+import com.example.animelist.fragments.AnimeListFragment;
+import com.example.animelist.fragments.UserAnimeListFragment;
+import com.example.animelist.fragments.UserProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
 
 public class BottomNavigationBar extends AppCompatActivity {
     private BottomNavigationView mainNav;
