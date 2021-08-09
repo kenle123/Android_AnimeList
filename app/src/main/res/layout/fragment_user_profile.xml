@@ -67,7 +67,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="Email"
-                    android:textSize="24sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/usernameProfile"
@@ -118,53 +118,54 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/birthdayProfile2"
+                    android:id="@+id/dateProfile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Birthday"
-                    android:textSize="24sp" />
+                    android:text="Date: 3/14/15"
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/birthdayProfile3"
+                    android:id="@+id/phoneNumberProfile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Birthday"
-                    android:textSize="24sp" />
+                    android:text="Phone: 333-333-3333"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#F4E1E1"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/birthdayProfile6"
+                    android:id="@+id/versionProfile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Birthday"
-                    android:textSize="24sp" />
+                    android:text="App Version 1.0.0"
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/birthdayProfile7"
+                    android:id="@+id/themeProfile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Birthday"
+                    android:text="Theme: Default"
                     android:textSize="24sp" />
             </LinearLayout>
 
