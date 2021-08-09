@@ -41,6 +41,9 @@ public class UserProfileFragment extends Fragment {
         // Create instance variable
         UserInformation instance = UserInformation.getInstance();
 
+        TextView name = view.findViewById(R.id.profile_name);
+        name.setText(instance.getUsername());
+
         // Displays username in profile page
         TextView username = view.findViewById(R.id.usernameProfile);
         username.setText(instance.getUsername());
@@ -51,7 +54,7 @@ public class UserProfileFragment extends Fragment {
 
         // Displays birthday in profile page
         TextView birthday = view.findViewById(R.id.birthdayProfile);
-        birthday.setText(instance.getBirthday());
+        birthday.setText("DOB : " + instance.getBirthday());
 
         // Displays gender in profile page
         TextView gender = view.findViewById(R.id.genderProfile);
@@ -67,7 +70,7 @@ public class UserProfileFragment extends Fragment {
         String strDate= formatter.format(date);
         // Displays current date in user profile page
         TextView displayDate = view.findViewById(R.id.dateProfile);
-        displayDate.setText("Current Date: "+ strDate);
+        displayDate.setText("Account Created: "+ strDate);
 
         return view;
     }

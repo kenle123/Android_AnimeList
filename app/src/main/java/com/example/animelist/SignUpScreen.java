@@ -1,14 +1,20 @@
 package com.example.animelist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.animelist.pojos.UserInformation;
 
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -99,7 +106,7 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
     public boolean checkIfFieldEmpty() {
         return email.getText().length() == 0 || username.getText().length() == 0 ||
                 password.getText().length() == 0 || passwordConfirm.getText().length() == 0 ||
-                birthday.getText().length() == 0 || phoneNumber.getText().length() == 0;
+                birthday.getText().length() == 0 || phoneNumber.getText().length() == 0 || mySpinner.getSelectedItem().toString().equals("Select Gender");
     }
     // Checks if phone number that user entered is correct format
     public static boolean isValidPhone(String phone) {
@@ -128,7 +135,7 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
         // To get the selected value from spinner
-        Toast.makeText(SignUpScreen.this, "Selected User: "+genders[position] ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(SignUpScreen.this, "Selected Gender: "+genders[position] ,Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
@@ -143,4 +150,5 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(v.getContext(), SignInScreen.class);
         v.getContext().startActivity(intent);
     }
+
 }

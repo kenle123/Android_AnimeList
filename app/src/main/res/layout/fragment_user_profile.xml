@@ -66,8 +66,8 @@
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Email"
-                    android:textSize="15sp" />
+                    android:text="ale21100@gmail.com"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/usernameProfile"
@@ -96,8 +96,8 @@
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Birthday"
-                    android:textSize="24sp" />
+                    android:text="DOB: 02/11/2001"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/genderProfile"
@@ -125,8 +125,8 @@
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Date: 3/14/15"
-                    android:textSize="18sp" />
+                    android:text="Created: 3/14/15"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/phoneNumberProfile"
@@ -155,7 +155,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="App Version 1.0.0"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/themeProfile"
@@ -166,7 +166,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="Theme: Default"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
