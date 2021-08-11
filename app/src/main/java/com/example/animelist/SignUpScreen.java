@@ -85,6 +85,7 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        // TextView button that goes back to sign in screen
         TextView goBackBtn = findViewById(R.id.backToSignIn);
         goBackBtn.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), SignInScreen.class);
@@ -108,7 +109,10 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
                 password.getText().length() == 0 || passwordConfirm.getText().length() == 0 ||
                 birthday.getText().length() == 0 || phoneNumber.getText().length() == 0 || mySpinner.getSelectedItem().toString().equals("Select Gender");
     }
-    // Checks if phone number that user entered is correct format
+    /**
+     * Checks if phone number is in correct format
+     * @param phone The user inputted phone number
+     */
     public static boolean isValidPhone(String phone) {
 
         String expression = "^([0-9\\+]|\\(\\d{1,3}\\))[0-9\\-\\. ]{3,15}$";
@@ -123,7 +127,10 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
             return false;
         }
     }
-    // Checks if email is in the correct format
+    /**
+     * Checks if email is in correct format
+     * @param email The user inputted email address
+     */
     private boolean isValidMail(String email) {
 
         String EMAIL_STRING = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"

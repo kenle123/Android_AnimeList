@@ -70,7 +70,7 @@ public class UserProfileFragment extends Fragment {
         String strDate= formatter.format(date);
         // Displays current date in user profile page
         TextView displayDate = view.findViewById(R.id.dateProfile);
-        displayDate.setText("Account Created: "+ strDate);
+        displayDate.setText("Acc. Created: "+ strDate);
 
         return view;
     }

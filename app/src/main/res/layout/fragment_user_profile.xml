@@ -108,7 +108,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="Gender"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -125,8 +125,8 @@
                     android:layout_weight="1"
                     android:background="#CFD5CA"
                     android:gravity="center"
-                    android:text="Created: 3/14/15"
-                    android:textSize="15sp" />
+                    android:text="Acc. Created: 3/14/15"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/phoneNumberProfile"
