@@ -45,6 +45,7 @@ public class AnimeListFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return view;
+
     }
 
     /**
@@ -78,8 +79,6 @@ public class AnimeListFragment extends Fragment {
 
         return animeList;
     }
-    public void addAnime(View v) {
-        Log.i("Anime", "ANIME");
-    }
+
 
 }

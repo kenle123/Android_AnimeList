@@ -137,7 +137,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="Phone: 333-333-3333"
-                    android:textSize="18sp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +166,7 @@
                     android:background="#CFD5CA"
                     android:gravity="center"
                     android:text="Theme: Default"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>

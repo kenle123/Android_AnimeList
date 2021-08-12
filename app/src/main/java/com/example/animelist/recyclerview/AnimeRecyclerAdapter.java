@@ -12,7 +12,7 @@ import com.example.animelist.pojos.Anime;
 import java.util.ArrayList;
 import java.util.List;
 
-// connects RecylerView to ArrayList of anime objects
+// connects RecyclerView to ArrayList of anime objects
 public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     List<Anime> models = new ArrayList<>();
 

@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.animelist.fragments.AnimeListFragment;
 import com.example.animelist.pojos.UserInformation;
 
 import java.util.Calendar;
