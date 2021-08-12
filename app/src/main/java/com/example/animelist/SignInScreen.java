@@ -28,7 +28,7 @@ public class SignInScreen extends AppCompatActivity {
         username = findViewById(R.id.usernameInput);
         password = findViewById(R.id.passwordInput);
 
-        // Button that goes to sign up page with on-click listener
+        // Create account button that goes to sign up page with on-click listener
         Button goToLoginPage = findViewById(R.id.goToSignUp);
         goToLoginPage.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), SignUpScreen.class);

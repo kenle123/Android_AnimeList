@@ -74,7 +74,6 @@ public class AnimeListFragment extends Fragment {
         animeList.add(new Anime("A Silent Voice", "| Rating: 8.97"));
         animeList.add(new Anime("Erased", "| Rating: 8.34"));
         animeList.add(new Anime("Death Parade", "| Rating: 8.18"));
-        animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.75"));
         animeList.add(new Anime("Soul Eater", "| Rating: 7.86"));
 
         return animeList;
