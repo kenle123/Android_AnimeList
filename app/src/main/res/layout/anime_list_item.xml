@@ -38,4 +38,18 @@
             android:textStyle="bold"
             tools:text="Sample Anime Rating" />
 
+        <TextView
+            android:id="@+id/anime_episode_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:gravity="end"
+            android:onClick="addAnime"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:text="Sample Anime Rating" />
+
 </FrameLayout>

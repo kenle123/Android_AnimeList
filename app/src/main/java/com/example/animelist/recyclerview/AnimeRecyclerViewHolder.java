@@ -11,6 +11,7 @@ import com.example.animelist.pojos.Anime;
 public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
     private TextView animeNameTextView;
     private TextView animeRatingTextView;
+    private TextView animeEpisodeCount;
 
     /**
      * Connects the anime name and rating to recycler view
@@ -20,6 +21,8 @@ public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         animeNameTextView = itemView.findViewById(R.id.anime_list_name);
         animeRatingTextView = itemView.findViewById(R.id.anime_list_rating);
+        animeEpisodeCount = itemView.findViewById(R.id.anime_episode_count);
+
     }
     // Sets text views to user specified name and rating
     /**
@@ -29,5 +32,6 @@ public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
     public void bindData(final Anime viewModel) {
         animeNameTextView.setText(viewModel.getAnimeName());
         animeRatingTextView.setText(viewModel.getAnimeRating());
+        animeEpisodeCount.setText(viewModel.getAnimeEpisodeCount());
     }
 }
