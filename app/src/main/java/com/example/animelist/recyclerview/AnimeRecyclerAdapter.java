@@ -32,12 +32,19 @@ public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         ((AnimeRecyclerViewHolder) holder).bindData(models.get(position));
     }
-    // gets size of anime list
+    /**
+     * Gets size of list
+     * @return Size of list
+     */
     @Override
     public int getItemCount() {
         return models.size();
     }
-    // gets type of item in anime list
+
+    /**
+     * Gets type of item
+     * @return Type of item
+     */
     @Override
     public int getItemViewType(final int position) {
         return R.layout.anime_list_item;
