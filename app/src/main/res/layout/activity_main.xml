@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#EA8080"
     android:backgroundTintMode="add"
-    tools:context=".MainActivity">
+    tools:context=".SignInScreen">
 
     <ImageView
         android:id="@+id/imageView2"

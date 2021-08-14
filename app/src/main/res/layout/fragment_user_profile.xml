@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.UserProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            tools:layout_editor_absoluteX="2dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:alpha="0.5"
+                android:scaleType="fitXY"
+                android:src="@drawable/gradientbackground" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_marginTop="-190dp"
+                android:src="@drawable/ic_baseline_account_box_24" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-15dp"
+                android:text="Profile Name"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="461dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/button_onoff_indicator_on" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#887C7C"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/emailProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="ale21100@gmail.com"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/usernameProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="Username"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#8EABE6"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/birthdayProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="DOB: 02/11/2001"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/genderProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="Gender"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CA6B6B"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dateProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="Acc. Created: 3/14/15"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/phoneNumberProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="Phone: 333-333-3333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F4E1E1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/versionProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="App Version 1.0.0"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/themeProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="#CFD5CA"
+                    android:gravity="center"
+                    android:text="Theme: Default"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>
