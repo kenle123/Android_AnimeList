@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimeListFragment extends Fragment {
+    public static List<Anime> animeList = new ArrayList<>();
 
     public AnimeListFragment() {
         // Required empty public constructor
@@ -53,8 +54,6 @@ public class AnimeListFragment extends Fragment {
      * @return An arraylist of type anime
      */
     private List<Anime> generateAnimeList() {
-        List<Anime> animeList = new ArrayList<>();
-
         animeList.add(new Anime("Fullmetal Alchemist", "| Rating: 9.17", "Episodes: 12/12"));
         animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.77", "Episodes: 12/12"));
         animeList.add(new Anime("Your Lie in April", "| Rating: 8.70", "Episodes: 12/12"));
@@ -78,6 +77,4 @@ public class AnimeListFragment extends Fragment {
 
         return animeList;
     }
-
-
 }

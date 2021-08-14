@@ -38,14 +38,16 @@ public class SignInScreen extends AppCompatActivity {
         // Login button that goes to main anime list page with on-click listener
         Button loginBtn = findViewById(R.id.button);
         loginBtn.setOnClickListener(v -> {
-            UserInformation instance = UserInformation.getInstance();
-            if(username.getText().toString().equals(instance.getUsername()) &&
-               password.getText().toString().equals(instance.getPassword())) {
-                goToMainPage(v);
-            }
-            else {
-                Toast.makeText(SignInScreen.this, "Username or password not valid!", Toast.LENGTH_SHORT).show();
-            }
+//            UserInformation instance = UserInformation.getInstance();
+//            if(username.getText().toString().equals(instance.getUsername()) &&
+//               password.getText().toString().equals(instance.getPassword())) {
+//                goToMainPage(v);
+//            }
+//            else {
+//                Toast.makeText(SignInScreen.this, "Username or password not valid!", Toast.LENGTH_SHORT).show();
+//            }
+            Intent intent = new Intent(v.getContext(), BottomNavigationBar.class);
+            v.getContext().startActivity(intent);
         });
     }
 

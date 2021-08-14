@@ -9,9 +9,9 @@ import com.example.animelist.R;
 import com.example.animelist.pojos.Anime;
 
 public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
-    private TextView animeNameTextView;
-    private TextView animeRatingTextView;
-    private TextView animeEpisodeCount;
+    private final TextView animeNameTextView;
+    private final TextView animeRatingTextView;
+    private final TextView animeEpisodeCount;
 
     /**
      * Connects the anime name and rating to recycler view

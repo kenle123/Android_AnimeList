@@ -30,6 +30,4 @@ public class Anime {
     public String getAnimeEpisodeCount() {return episodeCount;}
 
     public void setAnimeEpisodeCount(String episodeCount) {this.episodeCount = episodeCount;}
-
-    //hello
 }
