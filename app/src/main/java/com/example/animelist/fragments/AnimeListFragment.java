@@ -37,16 +37,15 @@ public class AnimeListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_anime_list, container, false);
 
+        // RecyclerView setup
         AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
         RecyclerView recyclerView = view.findViewById(R.id.anime_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
-
         // Inflate the layout for this fragment
         return view;
-
     }
 
     /**

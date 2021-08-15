@@ -15,7 +15,7 @@ public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
     private final TextView animeEpisodeCount;
 
     /**
-     * Connects the anime information to recycler view
+     * Connects the anime information textviews to the anime_list_item.xml textviews
      * @param itemView The list item
      */
     public AnimeRecyclerViewHolder(final View itemView) {
@@ -26,7 +26,7 @@ public class AnimeRecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
     /**
-     * Connects data to item in list
+     * Set the text of the anime text views
      * @param viewModel The recycler view
      */
     @SuppressLint("SetTextI18n")

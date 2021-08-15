@@ -68,6 +68,7 @@ public class UserProfileFragment extends Fragment {
         Date date = new Date();
         @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String strDate= formatter.format(date);
+
         // Displays current date in user profile page
         TextView displayDate = view.findViewById(R.id.dateProfile);
         displayDate.setText("Acc. Created: "+ strDate);
