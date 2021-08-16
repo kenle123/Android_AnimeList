@@ -53,26 +53,26 @@ public class AnimeListFragment extends Fragment {
      * @return An arraylist of type anime
      */
     private List<Anime> generateAnimeList() {
-        animeList.add(new Anime("Fullmetal Alchemist", "9.17", "12/12"));
-        animeList.add(new Anime("Jujutsu Kaisen", "8.77", "12/12"));
-        animeList.add(new Anime("Your Lie in April", "8.70", "12/12"));
-        animeList.add(new Anime("Steins;Gate", "9.10", "12/12"));
-        animeList.add(new Anime("Gintama", "8.95", "12/12"));
-        animeList.add(new Anime("Mob Psycho 100", "8.48", "12/12"));
-        animeList.add(new Anime("Monster", "8.79", "12/12"));
-        animeList.add(new Anime("Cowboy Bebop", "8.77", "12/12"));
-        animeList.add(new Anime("One Punch Man", "8.53", "12/12"));
-        animeList.add(new Anime("Your Name", "8.91", "12/12"));
-        animeList.add(new Anime("Hunter x Hunter", "9.10", "12/12"));
-        animeList.add(new Anime("No Game No Life", "8.15", "12/12"));
-        animeList.add(new Anime("Toradora", "8.17", "12/12"));
-        animeList.add(new Anime("Angel Beats", "8.11", "12/12"));
-        animeList.add(new Anime("Re:Zero", "8.17", "12/12"));
-        animeList.add(new Anime("Demon Slayer", "8.58", "12/12"));
-        animeList.add(new Anime("A Silent Voice", "8.97", "12/12"));
-        animeList.add(new Anime("Erased", "8.34", "12/12"));
-        animeList.add(new Anime("Death Parade", "8.18", "12/12"));
-        animeList.add(new Anime("Soul Eater", "7.86", "12/12"));
+        animeList.add(new Anime("Fullmetal Alchemist", "| Rating: 9.17", "Episodes: 64/64"));
+        animeList.add(new Anime("Jujutsu Kaisen", "| Rating: 8.77", "Episodes: 24/24"));
+        animeList.add(new Anime("Your Lie in April", "| Rating: 8.70", "Episodes: 24/24"));
+        animeList.add(new Anime("Steins;Gate", "| Rating: 9.10", "Episodes: 24/24"));
+        animeList.add(new Anime("Gintama", "| Rating: 8.95", "Episodes: 201/201"));
+        animeList.add(new Anime("Mob Psycho 100", "| Rating: 8.48", "Episodes: 12/12"));
+        animeList.add(new Anime("Monster", "| Rating: 8.79", "Episodes: 74/74"));
+        animeList.add(new Anime("Cowboy Bebop", "| Rating: 8.77", "Episodes: 24/24"));
+        animeList.add(new Anime("One Punch Man", "| Rating: 8.53", "Episodes: 12/12"));
+        animeList.add(new Anime("Your Name", "| Rating: 8.91", "Episodes: 1/1"));
+        animeList.add(new Anime("Hunter x Hunter", "| Rating: 9.10", "Episodes: 149/149"));
+        animeList.add(new Anime("No Game No Life", "| Rating: 8.15", "Episodes: 12/12"));
+        animeList.add(new Anime("Toradora", "| Rating: 8.17", "Episodes: 24/24"));
+        animeList.add(new Anime("Angel Beats", "| Rating: 8.11", "Episodes: 12/12"));
+        animeList.add(new Anime("Re:Zero", "| Rating: 8.17", "Episodes: 24/24"));
+        animeList.add(new Anime("Demon Slayer", "| Rating: 8.58", "Episodes: 24/24"));
+        animeList.add(new Anime("A Silent Voice", "| Rating: 8.97", "Episodes: 1/1"));
+        animeList.add(new Anime("Erased", "| Rating: 8.34", "Episodes: 12/12"));
+        animeList.add(new Anime("Death Parade", "| Rating: 8.18", "Episodes: 12/12"));
+        animeList.add(new Anime("Soul Eater", "| Rating: 7.86", "Episodes: 51/51"));
         return animeList;
     }
 }
