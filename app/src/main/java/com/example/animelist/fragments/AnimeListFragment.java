@@ -36,7 +36,7 @@ public class AnimeListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_anime_list, container, false);
-
+        Log.i("yes", "goes here");
         // RecyclerView setup
         AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
         RecyclerView recyclerView = view.findViewById(R.id.anime_list);
@@ -53,26 +53,26 @@ public class AnimeListFragment extends Fragment {
      * @return An arraylist of type anime
      */
     private List<Anime> generateAnimeList() {
-        animeList.add(new Anime("Fullmetal Alchemist", "| 9.17", "64/64"));
-        animeList.add(new Anime("Jujutsu Kaisen", "|  8.77", "24/24"));
-        animeList.add(new Anime("Your Lie in April", "| 8.70", "24/24"));
-        animeList.add(new Anime("Steins;Gate", "|  9.10", "24/24"));
-        animeList.add(new Anime("Gintama", "|  8.95", "201/201"));
-        animeList.add(new Anime("Mob Psycho 100", "|  8.48", "12/12"));
-        animeList.add(new Anime("Monster", "|  8.79", "74/74"));
-        animeList.add(new Anime("Cowboy Bebop", "|  8.77", "24/24"));
-        animeList.add(new Anime("One Punch Man", "|  8.53", "12/12"));
-        animeList.add(new Anime("Your Name", "| Rating: 8.91", "1/1"));
-        animeList.add(new Anime("Hunter x Hunter", "|  9.10", "149/149"));
-        animeList.add(new Anime("No Game No Life", "|  8.15", "12/12"));
-        animeList.add(new Anime("Toradora", "|  8.17", "24/24"));
-        animeList.add(new Anime("Angel Beats", "|  8.11", "12/12"));
-        animeList.add(new Anime("Re:Zero", "|  8.17", "24/24"));
-        animeList.add(new Anime("Demon Slayer", "|  8.58", "24/24"));
-        animeList.add(new Anime("A Silent Voice", "|  8.97", "1/1"));
-        animeList.add(new Anime("Erased", "|  8.34", "12/12"));
-        animeList.add(new Anime("Death Parade", "|  8.18", "12/12"));
-        animeList.add(new Anime("Soul Eater", "|  7.86", "51/51"));
+        animeList.add(new Anime("Fullmetal Alchemist", "| 9.17", "64"));
+        animeList.add(new Anime("Jujutsu Kaisen", "|  8.77", "24"));
+        animeList.add(new Anime("Your Lie in April", "| 8.70", "24"));
+        animeList.add(new Anime("Steins;Gate", "|  9.10", "24"));
+        animeList.add(new Anime("Gintama", "|  8.95", "201"));
+        animeList.add(new Anime("Mob Psycho 100", "|  8.48", "12"));
+        animeList.add(new Anime("Monster", "|  8.79", "74"));
+        animeList.add(new Anime("Cowboy Bebop", "|  8.77", "24"));
+        animeList.add(new Anime("One Punch Man", "|  8.53", "12"));
+        animeList.add(new Anime("Your Name", "| Rating: 8.91", "1"));
+        animeList.add(new Anime("Hunter x Hunter", "|  9.10", "149"));
+        animeList.add(new Anime("No Game No Life", "|  8.15", "12"));
+        animeList.add(new Anime("Toradora", "|  8.17", "24"));
+        animeList.add(new Anime("Angel Beats", "|  8.11", "12"));
+        animeList.add(new Anime("Re:Zero", "|  8.17", "24"));
+        animeList.add(new Anime("Demon Slayer", "|  8.58", "24"));
+        animeList.add(new Anime("A Silent Voice", "|  8.97", "1"));
+        animeList.add(new Anime("Erased", "|  8.34", "12"));
+        animeList.add(new Anime("Death Parade", "|  8.18", "12"));
+        animeList.add(new Anime("Soul Eater", "|  7.86", "51"));
         return animeList;
     }
 }

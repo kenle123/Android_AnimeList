@@ -1,6 +1,10 @@
 package com.example.animelist.recyclerview;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.animelist.R;
 import com.example.animelist.fragments.AnimeListFragment;
+import com.example.animelist.fragments.UserAnimeListFragment;
 import com.example.animelist.pojos.Anime;
 
 import java.util.ArrayList;
@@ -20,6 +25,10 @@ import java.util.List;
 // Connects RecyclerView to ArrayList of anime objects
 public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     List<Anime> models = new ArrayList<>();
+
+    public AnimeRecyclerAdapter() {
+
+    }
 
     public AnimeRecyclerAdapter(List<Anime> viewModels) {
         if(viewModels != null) {
@@ -38,14 +47,22 @@ public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         ((AnimeRecyclerViewHolder) holder).bindData(models.get(position));
 
-        holder.itemView.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), "Position at: " + position, Toast.LENGTH_SHORT).show();
-            Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
-                                           AnimeListFragment.animeList.get(position).getAnimeRating(),
-                                           AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
-            Log.i("anime", clickedAnime.getAnimeName() + " " + clickedAnime.getAnimeRating() + " " + clickedAnime.getAnimeEpisodeCount());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
+                        AnimeListFragment.animeList.get(position).getAnimeRating(),
+                        AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
+                Log.i("anime", clickedAnime.getAnimeName() + " " + clickedAnime.getAnimeRating() + " " + clickedAnime.getAnimeEpisodeCount());
+
+                UserAnimeListFragment.userAnimeList.add(new Anime(clickedAnime.getAnimeName(),
+                                                                  clickedAnime.getAnimeRating(),
+                                                                  clickedAnime.getAnimeEpisodeCount()));
+                Toast.makeText(v.getContext(), clickedAnime.getAnimeName() + " successfully added to user's anime list!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
+
     /**
      * Gets size of list
      * @return Size of list
