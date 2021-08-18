@@ -31,7 +31,7 @@ public class UserAnimeListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user_anime_list, container, false);
 
         // RecyclerView setup
-        AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter();
+        AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
         RecyclerView recyclerView = view.findViewById(R.id.user_anime_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -44,8 +44,7 @@ public class UserAnimeListFragment extends Fragment {
      * Generates the contents in the anime list
      * @return An arraylist of type anime
      */
-//    private List<Anime> generateAnimeList() {
-//        userAnimeList.add(new Anime("Jujutsu Kaisen", "|  8.77", "24"));
-//        return userAnimeList;
-//    }
+    private List<Anime> generateAnimeList() {
+        return userAnimeList;
+    }
 }

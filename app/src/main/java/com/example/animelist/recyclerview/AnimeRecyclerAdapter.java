@@ -26,10 +26,6 @@ import java.util.List;
 public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     List<Anime> models = new ArrayList<>();
 
-    public AnimeRecyclerAdapter() {
-
-    }
-
     public AnimeRecyclerAdapter(List<Anime> viewModels) {
         if(viewModels != null) {
             this.models.addAll(viewModels);
@@ -50,11 +46,12 @@ public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Store clicked anime list item in Anime object
                 Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
                         AnimeListFragment.animeList.get(position).getAnimeRating(),
                         AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
-                Log.i("anime", clickedAnime.getAnimeName() + " " + clickedAnime.getAnimeRating() + " " + clickedAnime.getAnimeEpisodeCount());
 
+                // Add clicked anime to user anime list so it will appear in user anime list fragment
                 UserAnimeListFragment.userAnimeList.add(new Anime(clickedAnime.getAnimeName(),
                                                                   clickedAnime.getAnimeRating(),
                                                                   clickedAnime.getAnimeEpisodeCount()));

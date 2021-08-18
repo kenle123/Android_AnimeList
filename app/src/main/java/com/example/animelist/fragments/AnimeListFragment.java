@@ -26,6 +26,7 @@ import java.util.List;
 
 public class AnimeListFragment extends Fragment {
     public static List<Anime> animeList = new ArrayList<>();
+    private final AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
 
     public AnimeListFragment() {
         // Required empty public constructor
@@ -36,9 +37,8 @@ public class AnimeListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_anime_list, container, false);
-        Log.i("yes", "goes here");
+
         // RecyclerView setup
-        AnimeRecyclerAdapter adapter = new AnimeRecyclerAdapter(generateAnimeList());
         RecyclerView recyclerView = view.findViewById(R.id.anime_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
