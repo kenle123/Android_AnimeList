@@ -2,10 +2,6 @@ package com.example.animelist.recyclerview;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,55 +39,32 @@ public class AnimeRecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         ((AnimeRecyclerViewHolder) holder).bindData(models.get(position));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
+            // Store clicked anime list item in Anime object
+            Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
+                    AnimeListFragment.animeList.get(position).getAnimeRating(),
+                    AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
 
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(v.getContext());
-                builder1.setMessage("Do you want to add this anime to your list?");
-                builder1.setCancelable(true);
+            // Dialog box asking user whether he/she wants to add the clicked anime to their personal anime list
+            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+            builder.setMessage("Do you want to add " + clickedAnime.getAnimeName() + " to your list?");
+            builder.setCancelable(true);
+            builder.setPositiveButton(
+                    "Yes",
+                    (dialog, id) -> {
+                        // Add clicked anime to user anime list so it will appear in user anime list fragment
+                        UserAnimeListFragment.userAnimeList.add(new Anime(clickedAnime.getAnimeName(),
+                                clickedAnime.getAnimeRating(),
+                                clickedAnime.getAnimeEpisodeCount()));
+                        Toast.makeText(v.getContext(), clickedAnime.getAnimeName() + " successfully added to your anime list!", Toast.LENGTH_SHORT).show();
+                        dialog.cancel();
+                    });
+            builder.setNegativeButton(
+                    "No",
+                    (dialog, id) -> dialog.cancel());
 
-                builder1.setPositiveButton(
-                        "Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // Store clicked anime list item in Anime object
-                                Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
-                                        AnimeListFragment.animeList.get(position).getAnimeRating(),
-                                        AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
-
-                                // Add clicked anime to user anime list so it will appear in user anime list fragment
-                                UserAnimeListFragment.userAnimeList.add(new Anime(clickedAnime.getAnimeName(),
-                                        clickedAnime.getAnimeRating(),
-                                        clickedAnime.getAnimeEpisodeCount()));
-                                Toast.makeText(v.getContext(), clickedAnime.getAnimeName() + " successfully added to user's anime list!", Toast.LENGTH_SHORT).show();
-
-                                dialog.cancel();
-                            }
-                        });
-
-                builder1.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-
-//                // Store clicked anime list item in Anime object
-//                Anime clickedAnime = new Anime(AnimeListFragment.animeList.get(position).getAnimeName(),
-//                        AnimeListFragment.animeList.get(position).getAnimeRating(),
-//                        AnimeListFragment.animeList.get(position).getAnimeEpisodeCount());
-//
-//                // Add clicked anime to user anime list so it will appear in user anime list fragment
-//                UserAnimeListFragment.userAnimeList.add(new Anime(clickedAnime.getAnimeName(),
-//                                                                  clickedAnime.getAnimeRating(),
-//                                                                  clickedAnime.getAnimeEpisodeCount()));
-                //Toast.makeText(v.getContext(), clickedAnime.getAnimeName() + " successfully added to user's anime list!", Toast.LENGTH_SHORT).show();
-            }
+            AlertDialog alert = builder.create();
+            alert.show();
         });
     }
 

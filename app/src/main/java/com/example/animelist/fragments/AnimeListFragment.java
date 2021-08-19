@@ -19,6 +19,7 @@ import com.example.animelist.R;
 import com.example.animelist.SignInScreen;
 import com.example.animelist.SignUpScreen;
 import com.example.animelist.pojos.Anime;
+import com.example.animelist.pojos.UserInformation;
 import com.example.animelist.recyclerview.AnimeRecyclerAdapter;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class AnimeListFragment extends Fragment {
         animeList.add(new Anime("Monster", "|  8.79", "74"));
         animeList.add(new Anime("Cowboy Bebop", "|  8.77", "24"));
         animeList.add(new Anime("One Punch Man", "|  8.53", "12"));
-        animeList.add(new Anime("Your Name", "| Rating: 8.91", "1"));
+        animeList.add(new Anime("Your Name", "| 8.91", "1"));
         animeList.add(new Anime("Hunter x Hunter", "|  9.10", "149"));
         animeList.add(new Anime("No Game No Life", "|  8.15", "12"));
         animeList.add(new Anime("Toradora", "|  8.17", "24"));

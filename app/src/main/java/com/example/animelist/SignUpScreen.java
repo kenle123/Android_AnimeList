@@ -159,5 +159,4 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(v.getContext(), SignInScreen.class);
         v.getContext().startActivity(intent);
     }
-
 }
