@@ -8,66 +8,69 @@
     android:backgroundTintMode="add"
     tools:context=".SignInScreen">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="707dp"
-        android:layout_height="747dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/gradientbackground" />
-
     <EditText
         android:id="@+id/usernameInput"
-        android:layout_width="340dp"
-        android:layout_height="57dp"
+        android:layout_width="304dp"
+        android:layout_height="37dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="267dp"
+        android:layout_marginTop="284dp"
         android:layout_marginEnd="36dp"
+        android:defaultFocusHighlightEnabled="false"
         android:ems="10"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true"
         android:fontFamily="monospace"
-        android:hint="Username"
         android:inputType="textPersonName"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/passwordInput"
-        android:layout_width="340dp"
-        android:layout_height="57dp"
+        android:layout_width="304dp"
+        android:layout_height="37dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="36dp"
         android:ems="10"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true"
         android:fontFamily="monospace"
-        android:hint="Password"
         android:inputType="textPassword"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="168dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTint="#66F9b0"
+        android:fontFamily="sans-serif-medium"
+        android:outlineAmbientShadowColor="#E46767"
         android:text="Login"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/goToSignUp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+        app:layout_constraintVertical_bias="0.361" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
-        android:fontFamily="@font/rubik_mono_one"
+        android:fontFamily="sans-serif-medium"
         android:text="Sign In"
         android:textAlignment="center"
-        android:textColor="#EDE3E3"
+        android:textColor="#000000"
+        android:textColorHint="#CD3B3B"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/usernameInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,12 +80,47 @@
 
     <Button
         android:id="@+id/goToSignUp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#F47174"
+        android:text="Create Account"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Create Account"
+        android:layout_marginTop="44dp"
+        android:text="Username"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="OR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

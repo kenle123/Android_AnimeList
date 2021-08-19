@@ -8,6 +8,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -158,5 +159,4 @@ public class SignUpScreen extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(v.getContext(), SignInScreen.class);
         v.getContext().startActivity(intent);
     }
-
 }
